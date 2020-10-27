@@ -13,9 +13,6 @@ day = today.strftime("%w")
 hour = today.strftime("%H")
 minute = today.strftime("%M") 
 
-day = 5 # terca
-hour = 15
-
 
 main_link = ""
 #open the file and read line by line
