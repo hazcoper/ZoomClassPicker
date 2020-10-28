@@ -26,9 +26,10 @@ with open("link_aulas.txt", "r") as file:
         if data1[2] == day:
             if data[2] != day:
                 data = data1 # means the first class is trash so I wil; change it and move one
-            elif int(data1[3].split("h")[0]) - int(hour) <  int(data[3].split("h")[0]) - int(hour):
+            elif abs(int(data1[3].split("h")[0]) - int(hour)) <  abs(int(data[3].split("h")[0]) - int(hour)):
                 #this is closer to the time then the one I have so change class
                 data = data1
+
 
 print(f"""
 Aula : {data[1]}
