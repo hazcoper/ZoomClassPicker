@@ -13,7 +13,6 @@ day = today.strftime("%w")
 hour = today.strftime("%H")
 minute = today.strftime("%M") 
 
-
 main_link = ""
 #open the file and read line by line
 with open("link_aulas.txt", "r") as file:
@@ -24,10 +23,10 @@ with open("link_aulas.txt", "r") as file:
         data1 = re.split(',|;', line)    # parse line
         if len(data1) < 2:
             break    #discard empty line
-        if int(data1[2]) == day:
-            if int(data[2]) != day:
+        if data1[2] == day:
+            if data[2] != day:
                 data = data1 # means the first class is trash so I wil; change it and move one
-            elif hour - int(data1[3].split("h")[0]) < hour - int(data[3].split("h")[0]):
+            elif int(data1[3].split("h")[0]) - int(hour) <  int(data[3].split("h")[0]) - int(hour):
                 #this is closer to the time then the one I have so change class
                 data = data1
 
